@@ -1,0 +1,285 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HOT SUMMER: 온열질환 가이드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Pretendard:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        .heading-font {
+            font-family: 'Black Han Sans', sans-serif;
+        }
+
+        .neo-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .neon-accent {
+            color: #2dd4bf;
+        }
+
+        .neon-bg {
+            background-color: #2dd4bf;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .tab-active {
+            background-color: #2dd4bf;
+            color: #fff;
+            border-radius: 9999px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="pb-28">
+
+    <!-- Header Section -->
+    <header class="p-6 pt-10">
+        <div class="flex justify-between items-start">
+            <div>
+                <h2 class="text-sm uppercase tracking-widest text-teal-500 font-bold mb-1">Health Manager Docs</h2>
+                <h1 class="heading-font text-5xl leading-tight text-slate-900">폭염주의보<br>생존 가이드</h1>
+            </div>
+            <div class="bg-orange-500 text-white text-xs font-black px-3 py-1 rounded-full animate-pulse">
+                HOT!
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee Banner -->
+    <div class="bg-slate-900 text-white py-2 font-black overflow-hidden border-y-2 border-slate-900">
+        <div class="marquee text-sm">
+            🌡️ 현재 기온 주의 단계 / 물, 그늘, 휴식 필수 / 3대 수칙 준수 / 쾌적한 작업 환경 조성 / 안전한 여름나기 🌡️
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="p-6 space-y-8">
+        
+        <!-- Video Section -->
+        <section class="animate__animated animate__fadeInUp">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+                <span class="mr-2">📺</span> 온열질환 예방 영상
+            </h3>
+            <div class="neo-card p-3">
+                <div class="video-container shadow-lg">
+                    <iframe src="https://www.youtube.com/embed/5U7O6vK_770" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Checklist -->
+        <section class="animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+                <span class="mr-2">🔥</span> 3대 핵심 수칙
+            </h3>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="neo-card p-5 flex items-center space-x-4">
+                    <div class="w-12 h-12 neon-bg rounded-2xl flex items-center justify-center text-2xl">💧</div>
+                    <div>
+                        <p class="font-bold text-lg text-slate-800">물 상시 섭취</p>
+                        <p class="text-sm text-slate-500">규칙적으로 수분을 보충하세요.</p>
+                    </div>
+                </div>
+                <div class="neo-card p-5 flex items-center space-x-4">
+                    <div class="w-12 h-12 neon-bg rounded-2xl flex items-center justify-center text-2xl">⛱️</div>
+                    <div>
+                        <p class="font-bold text-lg text-slate-800">그늘 확보</p>
+                        <p class="text-sm text-slate-500">직사광선을 피할 장소를 체크!</p>
+                    </div>
+                </div>
+                <div class="neo-card p-5 flex items-center space-x-4">
+                    <div class="w-12 h-12 neon-bg rounded-2xl flex items-center justify-center text-2xl">🧊</div>
+                    <div>
+                        <p class="font-bold text-lg text-slate-800">충분한 휴식</p>
+                        <p class="text-sm text-slate-500">폭염 시 무리한 작업은 NO.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Illness Types -->
+        <section class="animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <h3 class="text-xl font-bold mb-4">🩺 온열질환 자가진단</h3>
+            <div class="neo-card p-2 mb-4 flex bg-slate-200">
+                <button onclick="switchTab('exhaustion')" id="tab-exhaustion" class="flex-1 py-2 text-sm font-bold tab-active">열탈진</button>
+                <button onclick="switchTab('stroke')" id="tab-stroke" class="flex-1 py-2 text-sm font-bold text-slate-600">열사병</button>
+            </div>
+            
+            <div id="content-exhaustion" class="neo-card p-6 border-l-4 border-teal-400">
+                <p class="text-teal-600 font-black text-xl mb-2">#어지러움 #식은땀</p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    땀을 많이 흘려 수분과 염분이 부족해지는 상태입니다. 피부가 창백해지고 구토 증상이 있을 수 있습니다.
+                </p>
+                <ul class="text-xs space-y-2 text-slate-400">
+                    <li>✔️ 시원한 곳에서 휴식</li>
+                    <li>✔️ 수분 보충 (이온음료 등)</li>
+                </ul>
+            </div>
+
+            <div id="content-stroke" class="neo-card p-6 hidden border-l-4 border-red-400">
+                <p class="text-red-500 font-black text-xl mb-2">#의식혼미 #고열</p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    체온 조절 중추가 마비되어 40도 이상의 고열이 발생하는 응급상황입니다. **즉시 119 신고가 필요합니다.**
+                </p>
+                <ul class="text-xs space-y-2 text-slate-400">
+                    <li>✔️ 119 즉시 신고</li>
+                    <li>✔️ 환자 체온 낮추기 (젖은 수건 등)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Emergency Call Button -->
+        <section class="animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <a href="tel:119" class="block w-full bg-slate-900 text-white font-black text-center py-5 rounded-3xl text-xl shadow-xl">
+                EMERGENCY CALL 🚨
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Floating Navigation -->
+    <nav class="fixed bottom-6 left-6 right-6 neo-card p-4 flex justify-around items-center border border-white/20 shadow-2xl bg-white/90">
+        <button onclick="location.reload()" class="text-2xl text-teal-500">🏠</button>
+        <button onclick="getLocation()" class="text-2xl opacity-50">📍</button>
+        <button onclick="sendEmergencySms()" class="text-2xl opacity-100 text-red-500 animate-bounce">💬</button>
+        <button onclick="showAlert('보건실: 본관 1층 서편\n담당자: 보건관리자')" class="text-2xl opacity-50">⚙️</button>
+    </nav>
+
+    <!-- Overlay Alert -->
+    <div id="custom-alert" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-6 z-50">
+        <div class="neo-card p-8 w-full max-w-xs text-center border-2 border-teal-400 bg-white">
+            <p id="alert-text" class="mb-6 font-bold text-slate-800"></p>
+            <button onclick="closeAlert()" class="neon-bg text-white font-bold px-6 py-2 rounded-full shadow-lg">확인</button>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(type) {
+            const tabs = ['exhaustion', 'stroke'];
+            tabs.forEach(tab => {
+                const btn = document.getElementById('tab-' + tab);
+                const content = document.getElementById('content-' + tab);
+                if (tab === type) {
+                    btn.classList.add('tab-active');
+                    btn.classList.remove('text-slate-600');
+                    content.classList.remove('hidden');
+                } else {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('text-slate-600');
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        function showAlert(msg) {
+            document.getElementById('alert-text').innerText = msg;
+            document.getElementById('custom-alert').style.display = 'flex';
+        }
+
+        function closeAlert() {
+            document.getElementById('custom-alert').style.display = 'none';
+        }
+
+        function getLocation() {
+            if (!navigator.geolocation) {
+                showAlert("📍 위치 서비스를 지원하지 않는 브라우저입니다.");
+                return;
+            }
+            showAlert("📍 위치를 불러오고 있습니다...");
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                setTimeout(() => {
+                    window.open(`https://www.google.com/maps?q=${lat},${lng}`, '_blank');
+                    closeAlert();
+                }, 1000);
+            }, function() {
+                showAlert("📍 위치 권한을 허용해주세요!");
+            });
+        }
+
+        // 119 긴급 신고 메시지 전송 기능
+        function sendEmergencySms() {
+            if (!navigator.geolocation) {
+                const fallbackMsg = "[온열질환 응급신고]\n온열질환자가 발생하였습니다. 구조 부탁드립니다.";
+                openSmsApp(fallbackMsg);
+                return;
+            }
+
+            showAlert("🚨 위치를 파악하여 119 신고 메시지를 작성합니다...");
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                const now = new Date();
+                const timeStr = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} ${now.getHours()}시 ${now.getMinutes()}분`;
+                
+                const message = `[온열질환 응급신고]\n온열질환자가 발생하였습니다. 구조 부탁드립니다.\n- 위치: https://www.google.com/maps?q=${lat},${lng}\n- 신고시간: ${timeStr}`;
+                
+                setTimeout(() => {
+                    openSmsApp(message);
+                    closeAlert();
+                }, 1000);
+
+            }, function() {
+                const fallbackMsg = "[온열질환 응급신고]\n온열질환자가 발생하였습니다. 위치 파악이 되지 않으니 즉시 출동 바랍니다.";
+                openSmsApp(fallbackMsg);
+            });
+        }
+
+        function openSmsApp(message) {
+            const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const smsUrl = isIos 
+                ? `sms:119&body=${encodeURIComponent(message)}` 
+                : `sms:119?body=${encodeURIComponent(message)}`;
+            window.location.href = smsUrl;
+        }
+    </script>
+</body>
+</html>
+
+```
